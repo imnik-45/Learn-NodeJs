@@ -2,9 +2,9 @@
 
 const fs = require('fs');
 
-const readStream = fs.createReadStream('../docs/demo2.txt',{encoding: 'utf8'});
+const readStream = fs.createReadStream('docs/demo2.txt',{encoding: 'utf8'});
 
-const writeStream=fs.createWriteStream('../docs/demo3.txt');
+const writeStream=fs.createWriteStream('docs/demo3.txt');
 /*
 readStream.on('data',(chunk)=>{
     console.log("\n--new chunk--\n");
