@@ -12,3 +12,20 @@ Learn NodeJs from Scratch with Code Snippets and More.
     > Node.js uses JavaScript on the server.
     > Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser.
 
+## Module in Node.js
+
+    >A set of functions you want to include in your application.
+    >To include a module, use the require() function with the name of the module.
+   
+## Node.js NPM
+
+    >NPM is a package manager for Node.js packages, or modules if you like.The NPM program is installed on your computer when you install Node.js.
+    
+## Node.js HTTP Module    
+ 
+    >Node.js has a built-in module called HTTP, which allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP).
+     `var http = require('http'); `
+ 
+ ## Node.js CheatSheet
+ 
+ 
