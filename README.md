@@ -29,3 +29,12 @@ Learn NodeJs from Scratch with Code Snippets and More.
  ## Node.js CheatSheet
  
  ![a](https://user-images.githubusercontent.com/51753810/89105332-ce73a380-d43d-11ea-9170-7bc2ff0eb6fb.jpg)
+
+ ## Notes
+
+    >Install all the dependencies given in package json file.
+    >Node Modules for this file is removed.
+
+## Dependencies and Packages
+
+    >Express - Fast, unopinionated, minimalist web framework for Node.js
