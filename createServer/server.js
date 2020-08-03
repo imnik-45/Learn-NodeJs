@@ -1,9 +1,23 @@
 const http = require("http");
 const fs = require("fs");
+const lo = require("lodash");
 
 const server = http.createServer((req, res) => {
  
-console.log(req.url, req.method); //code runing in server not on browser so it will not available on browser console
+//console.log(req.url, req.method); //code runing in server not on browser so it will not available on browser console
+
+
+//lodash
+
+const num = lo.random(0,20);
+console.log(num);
+
+const greet =lo.once(()=> {
+  console.log("hello")
+});
+
+greet();
+
 
   // setting header content type
   res.setHeader("Content-type", "text/html");

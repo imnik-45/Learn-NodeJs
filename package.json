@@ -1,0 +1,22 @@
+{
+  "name": "learn-nodejs",
+  "version": "1.0.0",
+  "description": "![a](https://user-images.githubusercontent.com/51753810/89049556-14156b00-d36f-11ea-9ddd-ba969145e9cb.jpeg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imnik-45/Learn-NodeJs.git"
+  },
+  "author": "NIKHIL",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imnik-45/Learn-NodeJs/issues"
+  },
+  "homepage": "https://github.com/imnik-45/Learn-NodeJs#readme",
+  "dependencies": {
+    "lodash": "^4.17.19"
+  }
+}
