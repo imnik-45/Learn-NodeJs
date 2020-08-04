@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/imnik-45/Learn-NodeJs#readme",
   "dependencies": {
+    "ejs": "^3.1.3",
     "express": "^4.17.1",
     "lodash": "^4.17.19"
   }
