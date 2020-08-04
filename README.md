@@ -14,16 +14,16 @@ Learn NodeJs from Scratch with Code Snippets and More.
 
 ## Module in Node.js
 
-    >A set of functions you want to include in your application.
-    >To include a module, use the require() function with the name of the module.
+    > A set of functions you want to include in your application.
+    > To include a module, use the require() function with the name of the module.
    
 ## Node.js NPM
 
-    >NPM is a package manager for Node.js packages, or modules if you like.The NPM program is installed on your computer when you install Node.js.
+    > NPM is a package manager for Node.js packages, or modules if you like.The NPM program is installed on your computer when you install Node.js.
     
 ## Node.js HTTP Module    
  
-    >Node.js has a built-in module called HTTP, which allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP).
+    > Node.js has a built-in module called HTTP, which allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP).
      `var http = require('http'); `
  
  ## Node.js CheatSheet
@@ -37,11 +37,12 @@ Learn NodeJs from Scratch with Code Snippets and More.
 
 ## Dependencies and Packages
 
-    >Express - Fast, unopinionated, minimalist web framework for Node.js
-    >Ejs -  EJS is a simple templating language that lets you generate HTML markup with plain JavaScript.
+    > Express - Fast, unopinionated, minimalist web framework for Node.js
+    > Ejs -  EJS is a simple templating language that lets you generate HTML markup with plain JavaScript.
     
 ### MiddleWare
-     >Middleware functions are functions that have access to the request object (req), the response object (res), and the next function in the application’s request-response cycle.<br/ >     The next function is a function in the Express router which, when invoked, executes the middleware succeeding the current middleware.
+     > Middleware functions are functions that have access to the request object (req), the response object (res), and the next function in the application’s request-response cycle.
+     > The next function is a function in the Express router which, when invoked, executes the middleware succeeding the current middleware.
      
     Middleware functions can perform the following tasks:
 
