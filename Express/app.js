@@ -1,15 +1,34 @@
 const express = require('express');
-
 const app = express();
+const morgan = require('morgan');
+
 
 // register viewengine
-
 app.set('view engine','ejs');
 
-//          app.set('views','myviews');
+//app.set('views','myviews');    custom file for views
 
-
+// listen for requests
 app.listen(3000);
+
+//middleware & static files
+app.use(express.static('public'));
+
+// morgan - 3rd party middleware. Morgan is a logger middleware.
+app.use(morgan('dev'));
+
+app.use((req,res,next) => {
+    console.log('new request made : ');
+    console.log('host:',req.hostname);
+    console.log('path:',req.path);
+    console.log('method:',req.method);
+    next();      //next()  function
+});
+
+app.use((req,res,next) => {
+    console.log('in the next middleware');
+    next();      //next()  function
+});
 
 app.get('/',(req,res) => {
 
