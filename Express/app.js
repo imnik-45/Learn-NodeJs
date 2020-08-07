@@ -12,7 +12,7 @@ app.set('view engine','ejs');
 
 
 //connect mongo atlas
-//const dbURI ='mongodb+srv://<username>:<password>@cluster0.fjry4.mongodb.net/<dbname>?retryWrites=true&w=majority&ssl=true';
+//const dbURI ='mongodb+srv://<username>:<password>@<cluster-id/url>.mongodb.net/<dbname>?retryWrites=true&w=majority&ssl=true';
 
 
 //connect mongodb locally
