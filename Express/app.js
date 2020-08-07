@@ -11,10 +11,12 @@ const Blog=require('./models/blog');
 app.set('view engine','ejs');
 
 
-//connect mongodb
-//const dbURI ='mongodb+srv://node:node1234@cluster0.fjry4.mongodb.net/node-scratch?retryWrites=true&w=majority&ssl=true';
+//connect mongo atlas
+//const dbURI ='mongodb+srv://<username>:<password>@cluster0.fjry4.mongodb.net/<dbname>?retryWrites=true&w=majority&ssl=true';
 
-var mongoDB = 'mongodb://localhost/node-scratch';
+
+//connect mongodb locally
+const mongoDB = 'mongodb://localhost/node-scratch';
 
 mongoose.connect(mongoDB,{useNewUrlParser:true,useUnifiedTopology:true})
 .then((result)=>app.listen(3000))
