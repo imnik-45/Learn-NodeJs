@@ -2,7 +2,7 @@
 
 ![a](https://user-images.githubusercontent.com/51753810/89049556-14156b00-d36f-11ea-9ddd-ba969145e9cb.jpeg)
 
-Learn NodeJs from Scratch with Code Snippets and More.
+Learn NodeJs from Scratch with Code Snippets and More with MVC model.
 
 ## What is Node ?
     > Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.
@@ -35,6 +35,17 @@ Learn NodeJs from Scratch with Code Snippets and More.
 
     > Express - Fast, unopinionated, minimalist web framework for Node.js
     > Ejs -  EJS is a simple templating language that lets you generate HTML markup with plain JavaScript.
+    > Mongoose - Mongoose is an Object Data Modeling (ODM) library for MongoDB and Nodejs.
+
+## HTTP Request Methods
+    > GET
+    - The GET method requests a representation of the specified resource. Requests using GET should only retrieve data.
+    > POST
+    - The POST method is used to submit an entity to the specified resource, often causing a change in state or side effects on the server.
+    > PUT
+    - The PUT method replaces all current representations of the target resource with the request payload.
+    > DELETE
+    - The DELETE method deletes the specified resource.
     
 ### MiddleWare
      > Middleware functions are functions that have access to the request object (req), the response object (res), and the next function in the application’s request-response cycle.

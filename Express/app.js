@@ -1,10 +1,12 @@
 const express = require("express");
 const app = express();
-const morgan = require("morgan");
-const mongoose = require("mongoose");
-const bodyParser = require('body-parser')
-const Blog = require("./models/blog");
 
+const morgan = require("morgan");
+
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+
+const blogRoutes = require("./routes/blogRoutes");
 
 const { render } = require("ejs");
 
@@ -37,21 +39,20 @@ app.use(
     extended: true,
   })
 );
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 // morgan - 3rd party middleware. Morgan is a logger middleware.
 app.use(morgan("dev"));
 
 app.use((req, res, next) => {
-  console.log("new request made : ");
+  /* console.log("new request made : ");
   console.log("host:", req.hostname);
   console.log("path:", req.path);
-  console.log("method:", req.method);
+  console.log("method:", req.method);*/
   next(); //next()  function
 });
 
 app.use((req, res, next) => {
-  console.log("in the next middleware");
   next(); //next()  function
 });
 
@@ -65,117 +66,8 @@ app.get("/about", (req, res) => {
   });
 });
 
-//redirects to a page
-
-app.get("/blogs/create", (req, res) => {
-  res.render("create", {
-    title: "create new blog",
-  });
-});
-
-app.get("/blogs", (req, res) => {
-  Blog.find()
-    .sort({
-      createdAt: -1,
-    })
-    .then((result) => {
-      res.render("index", {
-        title: "All Blogs",
-        blogs: result,
-      });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
-
-app.post("/blogs", (req, res) => {
-  //console.log(req.body);
-  const blog = new Blog(req.body);
-  blog
-    .save()
-    .then((result) => {
-      res.redirect("/blogs");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
-
-// show details of a ID
-
-app.get("/blogs/:id", (req, res) => {
-  const id = req.params.id;
-  console.log(id);
-  Blog.findById(id)
-    .then((result) => {
-      res.render("details", {
-        blog: result,
-        title: "Blog Details",
-      });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
-
-// delete a post
-
-app.delete("/blogs/:id", (req, res) => {
-  const id = req.params.id;
-
-  Blog.findByIdAndDelete(id)
-    .then((result) => {
-      res.json({ redirect: "/blogs" });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
-
-app.get('/blogs/edit/:id',(req,res)=>{
-    const id = req.params.id;
-
-    Blog.findById(id)
-    .then((result) => {
-      res.render("edit", {
-        blog:result,
-        title: "edit Blogs",
-        
-      });
-      console.log(result.body);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-  
-});
-  
-
-app.put('/blogs/edit/:id',(req,res)=>{
-    
-   /* const id = req.params.id;
-    Blog.findOneAndUpdate(id)
-    .then((result) => {
-      res.json({ redirect: "/blogs" });
-    })
-    .catch((err) => {
-      console.log(err);
-    });*/
-
-    Blog.findByIdAndUpdate(req.params.id,req.body,{new: true},function(err,uptblog){
-        if(err){
-          console.log(err);
-        }else
-        {
-            res.redirect('/blogs'+req.params.id);
-        }
-    })
-    
-    console.log("dsjbdskjbv");
-});
-  
-
+//use app-routes
+app.use("/blogs", blogRoutes);
 
 // 404 pages
 
@@ -186,8 +78,8 @@ app.use((req, res) => {
 });
 
 /*
-//routes
 
+//routes
 app.get('/add-blog',(req,res)=>{
     const blog= new Blog({
         title:'new blog 2',
