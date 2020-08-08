@@ -10,17 +10,18 @@
 
 
 
-    <div class="blog-content">
+    <div class="blogs content">
         <h2>All Blogs</h2>
 
         <% if(blogs.length > 0){ %>
 
         <% blogs.forEach(blog => { %>
-        <div class="post">
-            <h2 class="title"><%= blog.title %></h2>
+       
+            <a class="single" href="/blogs/<%=blog._id %>">
+            <h3 class="title"><%= blog.title %></h3>
             <p class="snippet"><%= blog.snippet %></p>
-        </div>
-
+        
+    </a>
         <%}) %>
 
         <% } else { %>
@@ -29,8 +30,8 @@
 
         <%}%>
         
-
     </div>
+   
 
     <%- include('./partials/footer.ejs') %>
 
